@@ -60,7 +60,7 @@ function Products() {
                 <Button
                   variant="contained"
 
-                  href="https://wa.me/919999999999"
+                  href="https://www.instagram.com/myst.icknots/"                  
                   target="_blank"
 
                   sx={{
@@ -71,7 +71,7 @@ function Products() {
                     }
                   }}
                 >
-                  Order Now
+                  Order on Instagram
                 </Button>
 
               </CardContent>

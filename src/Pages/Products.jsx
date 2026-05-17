@@ -62,7 +62,7 @@ function Products() {
 
                   href="https://www.instagram.com/myst.icknots/"                  
                   target="_blank"
-
+                  rel="noopener noreferrer"
                   sx={{
                     mt: 2,
 

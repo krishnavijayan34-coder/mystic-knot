@@ -1,3 +1,5 @@
+import weddingGift from "../assets/weddinggift.jpeg";
+import anklet from "../assets/anklet.png";
 const products = [
 
   {
@@ -7,7 +9,7 @@ const products = [
 
     price: 700,
 
-    image:"/assets/weddinggiftbox.jpg"
+    image: weddingGift
   },
 
   {
@@ -17,7 +19,7 @@ const products = [
 
     price: 250,
 
-    image:"/assets/anklet.png"
+    image: anklet
   },
 
   {

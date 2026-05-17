@@ -43,7 +43,7 @@ function Home() {
               fontWeight: "bold"
             }}
           >
-            Mystic Knot
+            Mystic Knots
           </Typography>
 
           <Typography

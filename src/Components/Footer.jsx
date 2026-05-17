@@ -17,7 +17,7 @@ function Footer() {
     >
 
       <Typography variant="body1">
-        © 2026 Mystic Knot
+        © 2026 Mystic Knots
       </Typography>
 
       <Typography variant="body2">

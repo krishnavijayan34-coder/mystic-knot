@@ -26,7 +26,7 @@ function Navbar() {
             fontWeight: "bold"
           }}
         >
-          Mystic Knot
+          Mystic Knots
         </Typography>
 
         <Button

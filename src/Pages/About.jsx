@@ -22,8 +22,8 @@ function About() {
           lineHeight: 2
         }}
       >
-        Mystic Knot is a handmade gift and jewelry brand
-        started by Krishna and Megha with creativity,
+        Mystic Knots is a handmade gift and jewelry brand
+        started by Megha and Krishna with creativity,
         passion, and love.
 
         We create customized gifts, jewelry boxes,

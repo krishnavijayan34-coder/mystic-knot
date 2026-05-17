@@ -3,23 +3,21 @@ const products = [
   {
     id: 1,
 
-    name: "Rose Gift Box",
+    name: " Customized Wedding Gift Box",
 
-    price: 499,
+    price: 700,
 
-    image:
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+    image:"/assets/weddinggiftbox.jpg"
   },
 
   {
     id: 2,
 
-    name: "Golden Earrings",
+    name: "Black Pearl Beaded Anklet",
 
-    price: 299,
+    price: 250,
 
-    image:
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0"
+    image:"/assets/anklet.png"
   },
 
   {

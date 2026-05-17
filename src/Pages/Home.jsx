@@ -6,6 +6,7 @@ import {
 } from "@mui/material";
 
 import { Link } from "react-router-dom";
+import hero from "../assets/hero.jpg";
 
 function Home() {
   return (
@@ -18,9 +19,8 @@ function Home() {
         sx={{
           height: "90vh",
 
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1512436991641-6745cdb1723f)",
-
+          backgroundImage:`url(${hero})`,
+           
           backgroundSize: "cover",
           backgroundPosition: "center",
 

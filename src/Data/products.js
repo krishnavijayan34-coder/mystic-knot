@@ -1,11 +1,12 @@
 import weddingGift from "../assets/weddinggift.jpeg";
 import anklet from "../assets/anklet.png";
+import goldenAnklet from "../assets/goldenanklet.png";
 const products = [
 
   {
     id: 1,
 
-    name: " Customized Wedding Gift Box",
+    name: " Customized Gift Box",
 
     price: 700,
 
@@ -15,7 +16,7 @@ const products = [
   {
     id: 2,
 
-    name: "Black Pearl Beaded Anklet",
+    name: "Black Beaded Anklet",
 
     price: 250,
 
@@ -25,12 +26,11 @@ const products = [
   {
     id: 3,
 
-    name: "Couple Gift Box",
+    name: "Golden Anklet",
 
-    price: 799,
+    price: 300,
 
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+    image:goldenAnklet
   }
 
 ];

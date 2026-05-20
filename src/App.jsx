@@ -1,4 +1,20 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import {
+  HashRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline
+} from "@mui/material";
+
+import {
+  useMemo,
+  useState,
+  useEffect
+} from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,38 +25,88 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 function App() {
+
+  const [mode, setMode] = useState(
+    localStorage.getItem("theme") || "light"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("theme", mode);
+  }, [mode]);
+
+  const theme = useMemo(() =>
+    createTheme({
+
+      palette: {
+        mode,
+
+        primary: {
+          main: "#b08d57"
+        },
+
+        background: {
+          default:
+            mode === "dark"
+              ? "#121212"
+              : "#ffffff",
+
+          paper:
+            mode === "dark"
+              ? "#1e1e1e"
+              : "#ffffff"
+        }
+      },
+
+      typography: {
+        fontFamily: "Poppins, sans-serif"
+      }
+
+    }),
+    [mode]
+  );
+
   return (
-    <HashRouter>
 
-      <Navbar />
+    <ThemeProvider theme={theme}>
 
-      <Routes>
+      <CssBaseline />
 
-        <Route
-          path="/"
-          element={<Home />}
+      <HashRouter>
+
+        <Navbar
+          mode={mode}
+          setMode={setMode}
         />
 
-        <Route
-          path="/products"
-          element={<Products />}
-        />
+        <Routes>
 
-        <Route
-          path="/about"
-          element={<About />}
-        />
+          <Route
+            path="/"
+            element={<Home />}
+          />
 
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
+          <Route
+            path="/products"
+            element={<Products />}
+          />
 
-      </Routes>
+          <Route
+            path="/about"
+            element={<About />}
+          />
 
-      <Footer />
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
 
-    </HashRouter>
+        </Routes>
+
+        <Footer mode={mode} />
+
+      </HashRouter>
+
+    </ThemeProvider>
   );
 }
 

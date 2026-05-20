@@ -9,13 +9,17 @@ import { Link } from "react-router-dom";
 import hero from "../assets/hero.jpg";
 
 function Home() {
+
+  const darkMode =
+    localStorage.getItem("theme") === "dark";
+
   return (
     <Box>
 
       {/* HERO SECTION */}
       <Box
         sx={{
-          height: "90vh",
+          minHeight: "100vh",
           backgroundImage: `url(${hero})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -24,11 +28,12 @@ function Home() {
           alignItems: "center",
           textAlign: "center",
           color: "white",
-          position: "relative"
+          position: "relative",
+          px: 2
         }}
       >
 
-        {/* DARK OVERLAY */}
+        {/* OVERLAY */}
         <Box
           sx={{
             position: "absolute",
@@ -36,45 +41,85 @@ function Home() {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0,0,0,0.45)"
+            background:
+              darkMode
+                ? "rgba(0,0,0,0.65)"
+                : "rgba(0,0,0,0.45)"
           }}
         />
 
-        <Container sx={{ position: "relative", zIndex: 2 }}>
+        <Container
+          sx={{
+            position: "relative",
+            zIndex: 2
+          }}
+        >
 
+          {/* MAIN TITLE */}
           <Typography
-            variant="h2"
-            gutterBottom
             sx={{
               fontWeight: "bold",
-              letterSpacing: "2px"
+              letterSpacing: "3px",
+
+              fontSize: {
+                xs: "2.3rem",
+                sm: "3rem",
+                md: "4rem",
+                lg: "5rem"
+              },
+
+              color: "#fff",
+
+              textShadow:
+                "2px 2px 10px rgba(0,0,0,0.7)"
             }}
           >
-            Mystic-Knots
+            Mystic Knots
           </Typography>
 
+          {/* SUBTITLE */}
           <Typography
-            variant="h5"
-            gutterBottom
             sx={{
-              opacity: 0.9,
-              fontStyle: "italic"
+              mt: 2,
+              opacity: 0.95,
+              fontStyle: "italic",
+
+              fontSize: {
+                xs: "1rem",
+                sm: "1.2rem",
+                md: "1.5rem"
+              },
+
+              color: "#f5f5f5",
+
+              textShadow:
+                "1px 1px 8px rgba(0,0,0,0.6)"
             }}
           >
             Handmade Gifts & Jewelry Crafted with Love
           </Typography>
 
+          {/* BUTTON */}
           <Button
             variant="contained"
             component={Link}
             to="/products"
             sx={{
-              mt: 3,
+              mt: 4,
               backgroundColor: "#b08d57",
-              padding: "10px 25px",
-              fontSize: "16px",
+
+              px: 4,
+              py: 1.5,
+
+              fontSize: {
+                xs: "14px",
+                sm: "16px"
+              },
+
               borderRadius: "30px",
               textTransform: "none",
+              transition: "0.3s",
+
               "&:hover": {
                 backgroundColor: "#8c6f3f",
                 transform: "scale(1.05)"
@@ -85,6 +130,33 @@ function Home() {
           </Button>
 
         </Container>
+      </Box>
+
+      {/* FOOTER */}
+      <Box
+        sx={{
+          py: 3,
+          textAlign: "center",
+          backgroundColor:
+            darkMode ? "#111" : "#f5f5f5",
+
+          color:
+            darkMode ? "#fff" : "#333"
+        }}
+      >
+        <Typography variant="body2">
+          © 2026 Mystic Knots
+        </Typography>
+
+        <Typography
+          variant="body2"
+          sx={{
+            mt: 1,
+            opacity: 0.8
+          }}
+        >
+          Built by Krishna & Megha
+        </Typography>
       </Box>
 
     </Box>

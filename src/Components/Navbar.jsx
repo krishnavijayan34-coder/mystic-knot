@@ -5,7 +5,7 @@ import {
   Button,
   IconButton,
   Drawer,
-  List,
+ List,
   ListItem,
   ListItemButton,
   ListItemText,
@@ -19,7 +19,6 @@ import {
 } from "@mui/icons-material";
 
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 
 function Navbar({ mode, setMode }) {
@@ -39,7 +38,6 @@ function Navbar({ mode, setMode }) {
   ];
 
   return (
-
     <>
       <AppBar
         position="sticky"
@@ -59,32 +57,56 @@ function Navbar({ mode, setMode }) {
         }}
       >
 
-        <Toolbar>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+            px: {
+              xs: 1,
+              sm: 3,
+              md: 6
+            }
+          }}
+        >
 
-          {/* LOGO */}
-          <Typography
-            variant="h6"
+          {/* LEFT SIDE LOGO */}
+          <Box
             sx={{
-              flexGrow: 1,
-              fontWeight: "bold",
-              letterSpacing: "1px",
-
-              fontSize: {
-                xs: "1.1rem",
-                sm: "1.3rem"
-              }
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-start"
             }}
           >
-            Mystic Knots
-          </Typography>
+
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: "bold",
+                letterSpacing: "1px",
+
+                fontSize: {
+                  xs: "1.2rem",
+                  sm: "1.5rem"
+                }
+              }}
+            >
+              Mystic Knots
+            </Typography>
+
+          </Box>
 
           {/* DESKTOP MENU */}
           <Box
             sx={{
+              flex: 1,
+
               display: {
                 xs: "none",
                 md: "flex"
               },
+
+              justifyContent: "flex-end",
               alignItems: "center",
               gap: 1
             }}
@@ -189,7 +211,6 @@ function Navbar({ mode, setMode }) {
         <Box
           sx={{
             width: 250,
-
             height: "100%",
 
             backgroundColor:
@@ -210,6 +231,7 @@ function Navbar({ mode, setMode }) {
             sx={{
               p: 2,
               fontWeight: "bold",
+
               borderBottom:
                 mode === "dark"
                   ? "1px solid #333"
@@ -244,7 +266,7 @@ function Navbar({ mode, setMode }) {
 
             ))}
 
-            {/* THEME MODE */}
+            {/* DARK/LIGHT MODE */}
             <ListItem disablePadding>
 
               <ListItemButton

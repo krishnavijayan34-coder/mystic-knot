@@ -10,44 +10,49 @@ import hero from "../assets/hero.jpg";
 
 function Home() {
 
-  const darkMode =
-    localStorage.getItem("theme") === "dark";
-
   return (
+
     <Box>
 
       {/* HERO SECTION */}
       <Box
         sx={{
           minHeight: "100vh",
+
           backgroundImage: `url(${hero})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+
           textAlign: "center",
           color: "white",
+
           position: "relative",
+
           px: 2
         }}
       >
 
-        {/* OVERLAY */}
+        {/* DARK OVERLAY */}
         <Box
           sx={{
             position: "absolute",
+
             top: 0,
             left: 0,
+
             width: "100%",
             height: "100%",
+
             background:
-              darkMode
-                ? "rgba(0,0,0,0.65)"
-                : "rgba(0,0,0,0.45)"
+              "rgba(0,0,0,0.5)"
           }}
         />
 
+        {/* CONTENT */}
         <Container
           sx={{
             position: "relative",
@@ -55,20 +60,17 @@ function Home() {
           }}
         >
 
-          {/* MAIN TITLE */}
+          {/* TITLE */}
           <Typography
             sx={{
               fontWeight: "bold",
               letterSpacing: "3px",
 
               fontSize: {
-                xs: "2.3rem",
-                sm: "3rem",
-                md: "4rem",
-                lg: "5rem"
+                xs: "2.5rem",
+                sm: "3.5rem",
+                md: "4.5rem"
               },
-
-              color: "#fff",
 
               textShadow:
                 "2px 2px 10px rgba(0,0,0,0.7)"
@@ -81,19 +83,19 @@ function Home() {
           <Typography
             sx={{
               mt: 2,
-              opacity: 0.95,
+
               fontStyle: "italic",
 
               fontSize: {
                 xs: "1rem",
-                sm: "1.2rem",
-                md: "1.5rem"
+                sm: "1.3rem",
+                md: "1.6rem"
               },
 
-              color: "#f5f5f5",
+              opacity: 0.95,
 
               textShadow:
-                "1px 1px 8px rgba(0,0,0,0.6)"
+                "1px 1px 8px rgba(0,0,0,0.7)"
             }}
           >
             Handmade Gifts & Jewelry Crafted with Love
@@ -106,18 +108,21 @@ function Home() {
             to="/products"
             sx={{
               mt: 4,
+
               backgroundColor: "#b08d57",
 
               px: 4,
               py: 1.5,
+
+              borderRadius: "30px",
+
+              textTransform: "none",
 
               fontSize: {
                 xs: "14px",
                 sm: "16px"
               },
 
-              borderRadius: "30px",
-              textTransform: "none",
               transition: "0.3s",
 
               "&:hover": {
@@ -130,33 +135,7 @@ function Home() {
           </Button>
 
         </Container>
-      </Box>
 
-      {/* FOOTER */}
-      <Box
-        sx={{
-          py: 3,
-          textAlign: "center",
-          backgroundColor:
-            darkMode ? "#111" : "#f5f5f5",
-
-          color:
-            darkMode ? "#fff" : "#333"
-        }}
-      >
-        <Typography variant="body2">
-          © 2026 Mystic Knots
-        </Typography>
-
-        <Typography
-          variant="body2"
-          sx={{
-            mt: 1,
-            opacity: 0.8
-          }}
-        >
-          Built by Krishna & Megha
-        </Typography>
       </Box>
 
     </Box>

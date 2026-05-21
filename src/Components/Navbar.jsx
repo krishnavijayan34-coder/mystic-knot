@@ -5,7 +5,7 @@ import {
   Button,
   IconButton,
   Drawer,
- List,
+  List,
   ListItem,
   ListItemButton,
   ListItemText,
@@ -18,7 +18,10 @@ import {
   LightMode
 } from "@mui/icons-material";
 
-import { Link } from "react-router-dom";
+import {
+  NavLink
+} from "react-router-dom";
+
 import { useState } from "react";
 
 function Navbar({ mode, setMode }) {
@@ -38,6 +41,7 @@ function Navbar({ mode, setMode }) {
   ];
 
   return (
+
     <>
       <AppBar
         position="sticky"
@@ -62,6 +66,7 @@ function Navbar({ mode, setMode }) {
             display: "flex",
             justifyContent: "space-between",
             width: "100%",
+
             px: {
               xs: 1,
               sm: 3,
@@ -70,7 +75,7 @@ function Navbar({ mode, setMode }) {
           }}
         >
 
-          {/* LEFT SIDE LOGO */}
+          {/* LOGO */}
           <Box
             sx={{
               flex: 1,
@@ -116,14 +121,14 @@ function Navbar({ mode, setMode }) {
 
               <Button
                 key={item.name}
-                component={Link}
-                to={item.path}
-                sx={{
-                  color:
-                    mode === "dark"
-                      ? "#fff"
-                      : "#111",
 
+                component={NavLink}
+
+                to={item.path}
+
+                end={item.path === "/"}
+
+                sx={{
                   textTransform: "none",
                   fontSize: "15px",
                   fontWeight: 500,
@@ -132,6 +137,20 @@ function Navbar({ mode, setMode }) {
                   borderRadius: "8px",
 
                   transition: "0.3s",
+
+                  color:
+                    mode === "dark"
+                      ? "#fff"
+                      : "#111",
+
+                  "&.active": {
+                    backgroundColor: "#b08d57",
+                    color: "#fff",
+
+                    fontWeight: "bold",
+
+                    transform: "scale(1.05)"
+                  },
 
                   "&:hover": {
                     backgroundColor:
@@ -173,7 +192,7 @@ function Navbar({ mode, setMode }) {
 
           </Box>
 
-          {/* MOBILE MENU ICON */}
+          {/* MOBILE MENU */}
           <Box
             sx={{
               display: {
@@ -225,7 +244,6 @@ function Navbar({ mode, setMode }) {
           }}
         >
 
-          {/* DRAWER HEADER */}
           <Typography
             variant="h6"
             sx={{
@@ -251,9 +269,19 @@ function Navbar({ mode, setMode }) {
               >
 
                 <ListItemButton
-                  component={Link}
+                  component={NavLink}
                   to={item.path}
+
+                  end={item.path === "/"}
+
                   onClick={toggleDrawer}
+
+                  sx={{
+                    "&.active": {
+                      backgroundColor: "#b08d57",
+                      color: "#fff"
+                    }
+                  }}
                 >
 
                   <ListItemText
@@ -266,7 +294,7 @@ function Navbar({ mode, setMode }) {
 
             ))}
 
-            {/* DARK/LIGHT MODE */}
+            {/* THEME MODE */}
             <ListItem disablePadding>
 
               <ListItemButton
